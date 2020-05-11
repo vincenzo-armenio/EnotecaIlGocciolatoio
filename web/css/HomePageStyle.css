@@ -1,0 +1,39 @@
+/* centrare search bar */
+.form-inline{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+/* resize search bar */
+  #navBarSearchForm
+  {
+    width: 318px ;
+  }
+
+/* modifica colore icone */
+.fa-user   {
+  color: #000000;
+}
+.fa-shopping-cart {
+  color: #000000;
+}
+
+/* spostare categorie e distanziarle */
+#navbarCategorie{
+
+  margin-left: 24px;
+}
+
+.nav-item{
+  margin-right: 15%;
+}
+/* gestire altezza carousel/slideshow */
+.carousel-inner {
+
+  height: 500px;
+}
+/* cambia colore testo slide */
+.carousel-caption {
+  text-transform: uppercase;
+  color: #F5F5F5;
+}
