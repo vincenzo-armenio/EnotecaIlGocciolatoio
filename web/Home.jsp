@@ -21,6 +21,7 @@
 </head>
 <body>
 
+<!-- slider -->
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -60,6 +61,99 @@
     </a>
 </div>
 </div>
+<!-- fine slider -->
+
+<!-- prodotti random -->
+<div class="container">
+    <div class="card-deck">
+        <div class="card">
+            <img class="card-img-top" src="img/vino-novello-falo-123096.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h6 class="card-title">Nome Prodotto</h6>
+                <p>32€</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted"> <a href="#" class="buttonAcquista">Acquista</a> <a href="#" class="preferiti" ><i class="far fa-heart fa-lg"></i></a></small>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="img/vino-novello-falo-123096.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h6 class="card-title">Nome Prodotto</h6>
+                <p>32€</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted"> <a href="#" class="buttonAcquista">Acquista</a> <a href="#" class="preferiti" ><i class="far fa-heart fa-lg"></i></a></small>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="img/vino-novello-falo-123096.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h6 class="card-title">Nome Prodotto</h6>
+                <p>32€</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted"> <a href="#" class="buttonAcquista">Acquista</a> <a href="#" class="preferiti" ><i class="far fa-heart fa-lg"></i></a></small>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="img/vino-novello-falo-123096.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h6 class="card-title">Nome Prodotto</h6>
+                <p>32€</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted"> <a href="#" class="buttonAcquista">Acquista</a> <a href="#" class="preferiti" ><i class="far fa-heart fa-lg"></i></a></small>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-deck">
+        <div class="card">
+            <img class="card-img-top" src="img/vino-novello-falo-123096.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h6 class="card-title">Nome Prodotto</h6>
+                <p>32€</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted"> <a href="#" class="buttonAcquista">Acquista</a> <a href="#" class="preferiti" ><i class="far fa-heart fa-lg"></i></a></small>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="img/vino-novello-falo-123096.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h6 class="card-title">Nome Prodotto</h6>
+                <p>32€</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted"> <a href="#" class="buttonAcquista">Acquista</a> <a href="#" class="preferiti" ><i class="far fa-heart fa-lg"></i></a></small>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="img/vino-novello-falo-123096.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h6 class="card-title">Nome Prodotto</h6>
+                <p>32€</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted"> <a href="#" class="buttonAcquista">Acquista</a> <a href="#" class="preferiti" ><i class="far fa-heart fa-lg"></i></a></small>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="img/vino-novello-falo-123096.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h6 class="card-title">Nome Prodotto</h6>
+                <p>32€</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted"> <a href="#" class="buttonAcquista">Acquista</a> <a href="#" class="preferiti" ><i class="far fa-heart fa-lg"></i></a></small>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- fine prodotti random-->
 
 <!-- link jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
