@@ -2,7 +2,6 @@ package controller;
 
 import model.Categoria;
 import model.ConPool;
-import model.Prodotto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,29 +9,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-/*private int id;
-private String nome;
-private String descrizione;
-private double prezzo;
-private String immagine;
-private String nome_categoria;*/
+public class CategoriaDAO {
 
-
-public class ProdottoDAO {
-    public ArrayList<Prodotto> retriveAll() {
+    public ArrayList<Categoria> retriveAll() {
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps =
-                    con.prepareStatement("SELECT nome, immagine, prezzo FROM prodotto");
-            ArrayList<Prodotto> list = new ArrayList<>();
+                    con.prepareStatement("SELECT id, nome, descrizione FROM categoria");
+            ArrayList<Categoria> list = new ArrayList<>();
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                Prodotto p = new Prodotto();
-                p.setId(rs.getInt(1));
-                p.setNome(rs.getString(2));
-                p.setDescrizione(rs.getString(3));
-                p.setPrezzo(rs.getDouble(4));
-                list.add(p);
+                Categoria c = new Categoria();
+                c.setId(rs.getInt(1));
+                c.setNome(rs.getString(2));
+                c.setDescrizione(rs.getString(3));
+                list.add(c);
             }
 
             return list;
@@ -41,25 +32,23 @@ public class ProdottoDAO {
         }
     }
 
-    public ArrayList<Prodotto> retriveCategory(String cat) {
+    public Categoria getCategoria(String category) {
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps =
-                    con.prepareStatement("SELECT nome,immagine,prezzo FROM prodotto WHERE nome_categoria=?1");
+                    con.prepareStatement("SELECT id, nome, descrizione FROM categoria WHERE nome=? ");
 
-            ps.setString(1,cat);
-            ArrayList<Prodotto> list = new ArrayList<>();
+            ps.setString(1,category);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                Prodotto p=new Prodotto();
-                p.setId(rs.getInt(1));
-                p.setNome(rs.getString(2));
-                p.setDescrizione(rs.getString(3));
-                p.setPrezzo(rs.getDouble(4));
-                list.add(p);
+                Categoria c = new Categoria();
+                c.setId(rs.getInt(1));
+                c.setNome(rs.getString(2));
+                c.setDescrizione(rs.getString(3));
+                return c;
             }
+            return null;
 
-            return list;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
