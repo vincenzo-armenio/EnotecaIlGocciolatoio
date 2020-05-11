@@ -21,7 +21,7 @@
 <div class="container">
     <nav class="navbar navbar-light navbar-expand-lg " >
         <a class="navbar-brand" href="#">
-            <img src="/img/logo.png" width="450" height="128" alt="">
+            <img src="./img/logo.png" width="450" height="128" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -77,6 +77,7 @@
             </ul>
         </div>
     </nav>
+    
 <!-- link jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- link bootstrap js -->
