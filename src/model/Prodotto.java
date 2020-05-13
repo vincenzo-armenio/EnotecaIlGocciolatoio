@@ -7,16 +7,24 @@ public class Prodotto {
     private double prezzo;
     private String immagine;
     private String nome_categoria;
+    private int anno;
+    private String regione;
+    private double gradazione;
+    private int formato;
 
-    public Prodotto(int id, String nome, String descrizione, double prezzo, String immagine, String nome_categoria) {
+    public Prodotto(int id, String nome, String descrizione, double prezzo, String immagine, String nome_categoria, int anno, String regione, double gradazione, int formato) {
         this.id = id;
         this.nome = nome;
         this.descrizione = descrizione;
         this.prezzo = prezzo;
         this.immagine = immagine;
         this.nome_categoria = nome_categoria;
+        this.anno=anno;
+        this.regione=regione;
+        this.gradazione=gradazione;
+        this.formato=formato;
     }
-    
+
     public Prodotto(){}
 
     public int getId() {
@@ -63,7 +71,37 @@ public class Prodotto {
         return nome_categoria;
     }
 
-    public void setNome_categoria(String nome_categoria) {
-        this.nome_categoria = nome_categoria;
+    public int getAnno() {
+        return anno;
     }
+
+    public void setAnno(int anno) {
+        this.anno = anno;
+    }
+
+    public String getRegione() {
+        return regione;
+    }
+
+    public void setRegione(String regione) {
+        this.regione = regione;
+    }
+
+    public double getGradazione() {
+        return gradazione;
+    }
+
+    public void setGradazione(double gradazione) {
+        this.gradazione = gradazione;
+    }
+
+    public int getFormato() {
+        return formato;
+    }
+
+    public void setFormato(int formato) {
+        this.formato = formato;
+    }
+
+    public void setNome_categoria(String nome_categoria) { this.nome_categoria = nome_categoria; }
 }
