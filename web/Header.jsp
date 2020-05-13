@@ -52,36 +52,38 @@
 
         <div id ="navbarCategorie">
             <ul class="navbar-nav">
+
+                <!-- href indirizza alla servlet, aggiungendo come parametro category a cui è assegnata la categoria corrispondente -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#">VINI  <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="show-category?category=vini">VINI  <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">SPUMANTI</a>
+                    <a class="nav-link"  href="show-category?category=spumanti">SPUMANTI</a>
+
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">BIRRE</a>
+                    <a class="nav-link" href="show-category?category=birre">BIRRE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">CHAMPAGNE</a>
+                    <a class="nav-link" href="show-category?category=champagne">CHAMPAGNE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">SUPERALCOLICI</a>
+                    <a class="nav-link" href="show-category?category=superalcolici">SUPERALCOLICI</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">AMARI</a>
+                    <a class="nav-link" href="show-category?category=amari">AMARI</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">CIBO</a>
+                    <a class="nav-link" href="show-category?category=cibo">CIBO</a>
                 </li>
 
             </ul>
         </div>
     </nav>
-    
-<!-- link jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- link bootstrap js -->
-<script src="javascript/bootstrap.min.js"></script>
+    <!-- link jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- link bootstrap js -->
+    <script src="javascript/bootstrap.min.js"></script>
 
 </body>
 </html>
