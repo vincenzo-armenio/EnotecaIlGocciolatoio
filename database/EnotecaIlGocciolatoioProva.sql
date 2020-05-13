@@ -9,6 +9,7 @@ CREATE TABLE utente (
     pass varchar(20),
     ruolo boolean
     );
+ alter table utente ADD COLUMN accesso boolean;   
     
 create table ordine(
 	id int auto_increment primary key,
