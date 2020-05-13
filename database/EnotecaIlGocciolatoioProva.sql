@@ -10,6 +10,7 @@ CREATE TABLE utente (
     ruolo boolean
     );
  alter table utente ADD COLUMN accesso boolean;   
+ 
     
 create table ordine(
 	id int auto_increment primary key,
@@ -24,6 +25,10 @@ create table prodotto(
     immagine varchar(50),
     nome_categoria varchar(20) references categoria(nome)
 );
+alter table prodotto ADD COLUMN anno int not null; 
+alter table prodotto ADD COLUMN regione varchar(30) not null;
+alter table prodotto ADD COLUMN gradazione double not null;
+alter table prodotto ADD COLUMN formato int not null;
     
 create table categoria(
 	id int not null,
