@@ -1,0 +1,44 @@
+import java.io.*;
+import java.sql.SQLException;
+
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+
+@WebServlet("/login")
+public class LoginServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    public Login()
+    {
+        super();
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+
+        UtenteDAO utenteDAO = new UtenteDAO();
+
+        try {
+            Utente utente = UtenteDAO.RetriveByEmailPass(email, password);
+            String destPage = "login.jsp";
+
+            if (utente != null) {
+                HttpSession session = request.getSession();
+                session.setAttribute("user", user);
+                destPage = "login.jsp";
+            } else {
+                String message = "Invalid email/password";
+                request.setAttribute("message", message);
+            }
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher(destPage);
+            dispatcher.forward(request, response);
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            throw new ServletException(ex);
+        }
+    }
+}
