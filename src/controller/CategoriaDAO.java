@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class CategoriaDAO {
-
+    
     public ArrayList<Categoria> retriveAll() {
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps =

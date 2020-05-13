@@ -1,4 +1,5 @@
-package control.utente;
+package controller.utente;
 
 public class RecuperaPassword {
+
 }

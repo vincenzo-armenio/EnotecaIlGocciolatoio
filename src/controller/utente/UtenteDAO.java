@@ -1,5 +1,4 @@
-package control.utente;
-
+package controller.utente;
 import model.ConPool;
 import model.Utente;
 
@@ -19,7 +18,7 @@ public class UtenteDAO implements Serializable {
         ResultSet rs = ps.executeQuery();
 
         if (rs.next()) {
-            Utente u=new Utente();
+            Utente u = new Utente();
             u.setEmail(rs.getString(2));
             u.setPassword(rs.getString(3));
 
@@ -31,3 +30,7 @@ public class UtenteDAO implements Serializable {
     }
     }
 }
+
+
+
+

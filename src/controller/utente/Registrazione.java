@@ -1,4 +1,12 @@
-package control.utente;
+package controller.utente;
+
+import model.Utente;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 public class Registrazione extends HttpServlet {
     private UtenteDAO utenteDao;
