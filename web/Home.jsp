@@ -22,6 +22,7 @@
 <body>
 
 <!-- slider -->
+<div class="container">
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -150,10 +151,17 @@
             </div>
         </div>
     </div>
+    <!-- fine prodotti random-->
 
+    <!--sezione spazio bianco prima del footer-->
+    <div class="jumbotron jumbotron-fluid " style="background:transparent !important">
+    </div>
+  
+    <!-- include il footer -->
+    <%@ include file= "Footer.jsp"%>
 </div>
 
-<!-- fine prodotti random-->
+
 
 <!-- link jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
