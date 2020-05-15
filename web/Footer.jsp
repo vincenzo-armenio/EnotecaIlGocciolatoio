@@ -63,7 +63,7 @@
             <div class="social-media">
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-facebook"></i></a>
-
+                <i class="fab fa-cc-paypal fa-2x"></i>
             </div>
         </div>
     </div>
