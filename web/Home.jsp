@@ -63,7 +63,11 @@
 </div>
 </div>
 <!-- fine slider -->
-
+  
+<!--sezione spazio bianco prima del footer-->
+    <div class="jumbotron jumbotron-fluid " style="background:transparent !important">
+    </div>
+  
 <!-- prodotti random -->
 <div class="container">
     <div class="card-deck">
