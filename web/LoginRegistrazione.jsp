@@ -27,6 +27,14 @@
 </head>
   
 <body>
+  
+  <!-- include l'header -->
+<%@ include file= "HeaderLogo.jsp"%>
+
+<!--sezione spazio bianco prima del form -->
+<div class="jumbotron jumbotron-fluid " style="background:transparent !important">
+</div>
+  
 <!-- partial:index.partial.html -->
 <h2> Accedi o Crea un Account </h2>
 <div class="container" id="container">
