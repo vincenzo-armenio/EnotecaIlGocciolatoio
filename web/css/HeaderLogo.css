@@ -1,0 +1,13 @@
+.navbar-brand{
+
+    transform: translateX(-50%);
+    left: 50%;
+    top:8px;
+    position: absolute;
+
+}
+
+.navbar-light{
+
+    width: 100%;
+}
