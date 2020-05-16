@@ -7,11 +7,10 @@ CREATE TABLE utente (
 	email varchar(30),
     username varchar(30),
     pass varchar(20),
-    ruolo boolean
+    ruolo boolean not null,
+    accesso boolean not null
     );
- alter table utente ADD COLUMN accesso boolean;   
- 
-    
+  
 create table ordine(
 	id int auto_increment primary key,
     id_utente int references utente(id)
@@ -19,16 +18,18 @@ create table ordine(
 
 create table prodotto( 
 	id int not null auto_increment primary key,
-    nome varchar(40),
-    descrizione varchar(300),
+    nome varchar(40) not null,
+    descrizione varchar(300) ,
     prezzo double,
     immagine varchar(50),
+    anno int,
+    regione varchar(30),
+    gradazione int,
+    formato int,
+    quantita_acquistata int not null,
+    quantita_magazzino int not null,
     nome_categoria varchar(20) references categoria(nome)
 );
-alter table prodotto ADD COLUMN anno int not null; 
-alter table prodotto ADD COLUMN regione varchar(30) not null;
-alter table prodotto ADD COLUMN gradazione double not null;
-alter table prodotto ADD COLUMN formato int not null;
     
 create table categoria(
 	id int not null,
