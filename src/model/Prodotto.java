@@ -11,8 +11,12 @@ public class Prodotto {
     private String regione;
     private double gradazione;
     private int formato;
+    private int quantita_magazzino;
+    private int quantita_acquistata;
 
-    public Prodotto(int id, String nome, String descrizione, double prezzo, String immagine, String nome_categoria, int anno, String regione, double gradazione, int formato) {
+
+
+    public Prodotto(int id, String nome, String descrizione, double prezzo, String immagine, String nome_categoria, int anno, String regione, double gradazione, int formato, int quantita_magazzino, int quantita_acquistata) {
         this.id = id;
         this.nome = nome;
         this.descrizione = descrizione;
@@ -23,6 +27,8 @@ public class Prodotto {
         this.regione=regione;
         this.gradazione=gradazione;
         this.formato=formato;
+        this.quantita_magazzino=quantita_magazzino;
+        this.quantita_acquistata=quantita_acquistata;
     }
 
     public Prodotto(){}
@@ -104,4 +110,20 @@ public class Prodotto {
     }
 
     public void setNome_categoria(String nome_categoria) { this.nome_categoria = nome_categoria; }
+
+    public int getQuantita_magazzino() {
+        return quantita_magazzino;
+    }
+
+    public void setQuantita_magazzino(int quantita_magazzino) {
+        this.quantita_magazzino = quantita_magazzino;
+    }
+
+    public int getQuantita_acquistata() {
+        return quantita_acquistata;
+    }
+
+    public void setQuantita_acquistata(int quantita_acquistata) {
+        this.quantita_acquistata = quantita_acquistata;
+    }
 }
