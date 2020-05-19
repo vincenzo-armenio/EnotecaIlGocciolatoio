@@ -1,67 +1,67 @@
 package controller;
 
 import model.Categoria;
-import model.ConPool;
 import model.Prodotto;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
-/*private int id;
-private String nome;
-private String descrizione;
-private double prezzo;
-private String immagine;
-private String nome_categoria;*/
+@WebServlet("/index.html")
+public class HomeServlet extends HttpServlet {
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
+        ProdottoDAO proDAO=new ProdottoDAO();
+        /*
 
-public class ProdottoDAO {
-    public ArrayList<Prodotto> retriveAll() {
-        try (Connection con = ConPool.getConnection()) {
-            PreparedStatement ps =
-                    con.prepareStatement("SELECT nome, immagine, prezzo FROM prodotto");
-            ArrayList<Prodotto> list = new ArrayList<>();
-            ResultSet rs = ps.executeQuery();
+            Prodotto p=new Prodotto();
+        double n = (int)(Math.random()*10);
+        p=proDAO.retriveOne((int) n);
+        getServletContext().setAttribute("prodotto", p);
+        }*/
 
-            while (rs.next()) {
-                Prodotto p = new Prodotto();
-                p.setId(rs.getInt(1));
-                p.setNome(rs.getString(2));
-                p.setDescrizione(rs.getString(3));
-                p.setPrezzo(rs.getDouble(4));
-                list.add(p);
-            }
+        Prodotto p1,p2,p3,p4,p5,p6,p7,p8;
 
-            return list;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
+        p1 = proDAO.retriveOne((int) (Math.random() * 10));
+        getServletContext().setAttribute("p1" , p1);
 
-    public ArrayList<Prodotto> retriveCategory(String cat) {
-        try (Connection con = ConPool.getConnection()) {
-            PreparedStatement ps =
-                    con.prepareStatement("SELECT nome,immagine,prezzo FROM prodotto WHERE nome_categoria=?1");
+        p2 = proDAO.retriveOne((int) (Math.random() * 10));
+        getServletContext().setAttribute("p2" , p2);
 
-            ps.setString(1,cat);
-            ArrayList<Prodotto> list = new ArrayList<>();
-            ResultSet rs = ps.executeQuery();
+        p3 = proDAO.retriveOne((int) (Math.random() * 10));
+        getServletContext().setAttribute("p3" , p3);
 
-            while (rs.next()) {
-                Prodotto p=new Prodotto();
-                p.setId(rs.getInt(1));
-                p.setNome(rs.getString(2));
-                p.setDescrizione(rs.getString(3));
-                p.setPrezzo(rs.getDouble(4));
-                list.add(p);
-            }
+        p4 = proDAO.retriveOne((int) (Math.random() * 10));
+        getServletContext().setAttribute("p4" , p4);
 
-            return list;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        p5 = proDAO.retriveOne((int) (Math.random() * 10));
+        getServletContext().setAttribute("p5" , p5);
+
+        p6 = proDAO.retriveOne((int) (Math.random() * 10));
+        getServletContext().setAttribute("p6" , p6);
+
+        p7 = proDAO.retriveOne((int) (Math.random() * 10));
+        getServletContext().setAttribute("p7" , p7);
+
+        p8 = proDAO.retriveOne((int) (Math.random() * 10));
+        getServletContext().setAttribute("p8" , p8);
+
+        String address;
+        address = "/Home.jsp";
+        RequestDispatcher dispatcher =
+                request.getRequestDispatcher(address);
+        dispatcher.forward(request, response);
+
     }
 }
+
