@@ -154,10 +154,9 @@ public class ProdottoDAO {
 
             while (rs.next()) {
                 Prodotto p=new Prodotto();
-                p.setId(rs.getInt(1));
-                p.setNome(rs.getString(2));
-                p.setDescrizione(rs.getString(3));
-                p.setPrezzo(rs.getDouble(4));
+                p.setNome(rs.getString(1));
+                p.setImmagine(rs.getString(2));
+                p.setPrezzo(rs.getDouble(3));
                 list.add(p);
             }
             return list;
