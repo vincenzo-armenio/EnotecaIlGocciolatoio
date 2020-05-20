@@ -104,7 +104,8 @@ Prodotto[] p = new Prodotto[0];
 <div class="container">
     <div class="card-deck">
         <div class="card">
-            <img class="card-img-top" src="<%=p1.getImmagine()%>" alt="Card image cap">
+
+            <a href="show-product?product=<%=p1.getNome()%>"><img class="card-img-top" src="<%=p1.getImmagine()%>" alt="Card image cap"></a>
             <div class="card-body">
                 <h6 class="card-title"><%=p1.getNome()%></h6>
                 <p><%=p1.getPrezzo()%></p>
