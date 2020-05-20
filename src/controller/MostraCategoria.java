@@ -21,88 +21,35 @@ public class MostraCategoria extends HttpServlet {
         /*
         Viene ripreso il parametro della category, e controllato a quale categoria corrisponde
          */
-        String category=request.getParameter("category");
+        String category = request.getParameter("category");
         ProdottoDAO proDAO = new ProdottoDAO();
         String address = null;
-
-        if(category.equals("vini")){
-            String categoria = "vini";
-
-            List<Prodotto> prodotti = proDAO.retriveCategory(categoria);
-            request.getSession().setAttribute("prodotti", prodotti);
-
-            address = "/Categoria.jsp";
-            RequestDispatcher dispatcher = request.getRequestDispatcher(address);
-            dispatcher.forward(request, response);
+        String categoria=null;
+        if (category.equals("vini")) {
+            categoria = "Vino";
         }
-        else{
-            if(category.equals("spumanti")){
-                String categoria = "spumanti";
-
-                List<Prodotto> prodotti = proDAO.retriveCategory(categoria);
-                request.getSession().setAttribute("prodotti", prodotti);
-
-                address = "/Categoria.jsp";
-
-            }
-            else{
-                if(category.equals("champagne")){
-                    String categoria = "champagne";
-
-                    List<Prodotto> prodotti = proDAO.retriveCategory(categoria);
-                    request.getSession().setAttribute("prodotti", prodotti);
-
-                    address = "/Categoria.jsp";
-                }
-                else{
-                    if(category.equals("birre")){
-                        String categoria = "birre";
-
-                        List<Prodotto> prodotti = proDAO.retriveCategory(categoria);
-                        request.getSession().setAttribute("prodotti", prodotti);
-
-                        address = "/Categoria.jsp";
-                    }
-                    else{
-                        if(category.equals("superalcolici")){
-                            String categoria = "superalcolici";
-
-                            List<Prodotto> prodotti = proDAO.retriveCategory(categoria);
-                            request.getSession().setAttribute("prodotti", prodotti);
-
-                            address = "/Categoria.jsp";
-                        }
-                        else{
-                            if(category.equals("amari")){
-                                String categoria = "amari";
-
-                                List<Prodotto> prodotti = proDAO.retriveCategory(categoria);
-                                request.getSession().setAttribute("prodotti", prodotti);
-
-                                address = "/Categoria.jsp";
-                            }
-                            else{
-                                if(category.equals("cibo")){
-                                    String categoria = "cibo";
-
-                                    List<Prodotto> prodotti = proDAO.retriveCategory(categoria);
-                                    request.getSession().setAttribute("prodotti", prodotti);
-
-                                    address = "/Categoria.jsp";
-                                }
-
-                            }
-
-                        }
-
-                    }
-
-                }
-            }
-
+        if (category.equals("spumanti")) {
+            categoria = "Spumanti";
         }
+        if (category.equals("champagne")) {
+            categoria = "Champagne";
+        }
+        if (category.equals("birre")) {
+            categoria = "Birra";
+        }
+        if (category.equals("superalcolici")) {
+            categoria = "Superalcolici";
+        }
+        if (category.equals("amari")) {
+            categoria = "Amari";
+        }
+        if (category.equals("cibo")) {
+            categoria = "Cibo";
+        }
+        List<Prodotto> prodotti = proDAO.retriveCategory(categoria);
+        request.setAttribute("prodotti", prodotti);
+        address = "/Categoria.jsp";
         RequestDispatcher dispatcher = request.getRequestDispatcher(address);
         dispatcher.forward(request, response);
     }
-
 }
