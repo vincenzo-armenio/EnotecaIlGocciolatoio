@@ -6,11 +6,11 @@ CREATE TABLE utente (
 	id int auto_increment primary key,
 	email varchar(30),
     username varchar(30),
-    pass varchar(20),
-    ruolo boolean not null,
+    pass varchar(70),
+    ruolo varchar(70),
     accesso boolean not null
     );
-  
+    
 create table ordine(
 	id int auto_increment primary key,
     id_utente int references utente(id)
@@ -55,9 +55,6 @@ values('Daarbulah 6X','Realizzata con una miscela di malti torrefatti e caramell
 insert into prodotto(nome,descrizione,prezzo,immagine,regione,gradazione,formato,quantita_acquistata, quantita_magazzino, nome_categoria)
 values('Xocoveza 12X','Birra in stile Imperial Stout prodotta con aggiunta di caffè, vaniglia, cacao, peperoncino, noce moscata e cannella.', 99, './img/daarbulah.jpg', 'USA', 9,33,0,0,'Birra' );
 
-insert into prodotto(nome,descrizione,prezzo,immagine,regione,gradazione,foprodottoprodottormato,quantita_acquistata, quantita_magazzino, nome_categoria)
-values('Oude Geuze Vieille 12X','Oude Geuze affinata in vecchi barili di legno chiamati “Pijpen”. Quest’ultimi, dalla capacità di circa 650 litri e di età compresa tra i 60 e i 120 anni, erano destinati inizialmente al trasporto di vino alle città portuali di Bruges e Anversa.', 113, './img/oude.jpg', 'Belgio', 7,33,0,0,'Birra' );
-
 create table categoria(
 	id int not null,
     nome varchar(25) primary key,
@@ -87,3 +84,4 @@ values (7,'Confetture','Dai uno sguardo alle nostre confetture, vari tipi di cre
 
 insert into categoria
 values (8,'Cibo','Scopri i nostri prodotti di alimentari come pasta, tavolette di cioccolato e biscotti.' );
+
