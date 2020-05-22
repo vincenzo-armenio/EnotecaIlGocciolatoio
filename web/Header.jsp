@@ -36,7 +36,7 @@
 
             <ul class="navbar-nav ">
                 <li class="nav-item ">
-                    <a class="nav-link"  href="index.html"><i class="fas fa-user fa-lg" ></i> </a>
+                    <a class="nav-link"  href="indirizzamento"><i class="fas fa-user fa-lg" ></i> </a>
 
                 </li>
                 <li class="nav-item">
