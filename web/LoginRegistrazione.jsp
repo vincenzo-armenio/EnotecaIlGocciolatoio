@@ -5,13 +5,6 @@
   Time: 21:37
   To change this template use File | Settings | File Templates.
 --%>
-<%--
-  Created by IntelliJ IDEA.
-  User: vince
-  Date: 10/05/2020
-  Time: 21:37
-  To change this template use File | Settings | File Templates.
---%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -19,40 +12,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration Login Form</title>
-  
-  <!-- Link css -->
+
+    <!-- Link css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/LoginRegistration.css">
 
 </head>
-  
+
 <body>
-  
-  <!-- include l'header -->
+
+<!-- include l'header -->
 <%@ include file= "HeaderLogo.jsp"%>
 
 <!--sezione spazio bianco prima del form -->
 <div class="jumbotron jumbotron-fluid " style="background:transparent !important">
 </div>
-  
+
 <!-- partial:index.partial.html -->
 <h2> Accedi o Crea un Account </h2>
 <div class="container" id="container">
     <div class="form-container sign-up-container">
-        <form action="#">
+        <form action="register" method="POST">
             <h1>Crea Account</h1>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input type="text" name="username"placeholder="Name" />
+            <input type="email" name="email"placeholder="Email" />
+            <input type="password" name="pass" placeholder="Password" />
             <button>Registrati </button>
         </form>
     </div>
     <div class="form-container sign-in-container">
-        <form action="#">
+        <form action="login" method="POST">
             <h1>Accedi</h1>
 
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input type="text" name="username"placeholder="Username" />
+            <input type="password" name="pass" placeholder="Password" />
             <a href="#">Hai dimenticato la password?</a>
             <button>Accedi</button>
         </form>
