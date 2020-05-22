@@ -1,40 +1,50 @@
-package controller.utente;
+package controller;
 
 import model.Utente;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 
+@WebServlet("/register")
 public class Registrazione extends HttpServlet {
-    private UtenteDAO utenteDao;
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String username=request.getParameter("username");
+        String email=request.getParameter("email");
+        String pass=request.getParameter("pass");
 
-    public void init() {
-        utenteDao = new UtenteDAO();
-    }
+        UtenteDAO utenteDAO=new UtenteDAO();
+        ArrayList<String> users=utenteDAO.retriveUser();
+        String address;
 
-    protected void doPost(HttpServlerRequest request, HttpServletResponse response) throws ServletException, IOException
-    {
-        int id=request.getParameter("id");
-        String email = request.getParameter("email");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String ruolo=request.getParameter("ruolo");
-
-        Utente utente=new Utente();
-        utente.setEmail(email);
-        utente.setUsername(username);
-        utente.setPassword(password);
-        utente.setRuolo(ruolo);
-
-        try{
-            UtenteDAO.RetriveByEmailPass(utente);
-        } catch(Exception e)
-        {
-            e.printStackTrace();
+        for(String e:users){
+            if(e.equals(username)){
+                address = "/UsernamegiaPresente.jsp";
+                RequestDispatcher dispatcher = request.getRequestDispatcher(address);
+                dispatcher.forward(request, response);
+                System.out.println("Errore, username gia presente\n");
+            }
         }
-        response.sendRedirect("LoginRegistrazione.jsp");
+
+        Utente u=new Utente();
+        u.setEmail(email);
+        u.setUsername(username);
+        u.setPass(pass);
+        u.setRuolo("utente");
+        u.setAccesso(true);
+
+        utenteDAO.doSave(u);
+        request.getSession().setAttribute("utente", u);
+
+        address = "/Home.jsp";
+        RequestDispatcher dispatcher =
+                request.getRequestDispatcher(address);
+        dispatcher.forward(request, response);
+
     }
 }
