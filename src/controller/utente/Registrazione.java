@@ -36,7 +36,6 @@ public class Registrazione extends HttpServlet {
         u.setUsername(username);
         u.setPass(pass);
         u.setRuolo("utente");
-        u.setAccesso(true);
 
         utenteDAO.doSave(u);
         request.getSession().setAttribute("utente", u);
