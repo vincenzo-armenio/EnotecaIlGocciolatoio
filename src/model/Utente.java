@@ -14,18 +14,15 @@ public class Utente {
     private String username;
     private String pass;
     private String ruolo;
-    private boolean accesso;
 
     public Utente(){}
 
-    public Utente(int id, String email, String username, String pass, String ruolo, boolean accesso) {
+    public Utente(int id, String email, String username, String pass, String ruolo) {
         this.id = id;
         this.email = email;
         this.username = username;
         this.pass = pass;
-        this.ruolo = ruolo;
-        this.accesso=accesso;
-    }
+        this.ruolo = ruolo; }
 
     public int getId() {
         return id;
@@ -72,14 +69,6 @@ public class Utente {
 
     public void setRuolo(String ruolo) {
         this.ruolo = ruolo;
-    }
-
-    public boolean isAccesso() {
-        return accesso;
-    }
-
-    public void setAccesso(boolean accesso) {
-        this.accesso = accesso;
     }
 
     @Override
