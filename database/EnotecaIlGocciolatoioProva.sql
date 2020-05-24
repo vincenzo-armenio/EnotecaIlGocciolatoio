@@ -7,8 +7,7 @@ CREATE TABLE utente (
 	email varchar(30),
     username varchar(30),
     pass varchar(70),
-    ruolo varchar(70),
-    accesso boolean not null
+    ruolo varchar(70)
     );
     
 create table ordine(
@@ -84,4 +83,3 @@ values (7,'Confetture','Dai uno sguardo alle nostre confetture, vari tipi di cre
 
 insert into categoria
 values (8,'Cibo','Scopri i nostri prodotti di alimentari come pasta, tavolette di cioccolato e biscotti.' );
-
