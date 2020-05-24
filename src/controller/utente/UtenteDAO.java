@@ -50,7 +50,7 @@ public class UtenteDAO {
     public Utente doRetrieveByUsernamePassword(String username, String password) {
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps = con.prepareStatement(
-                    "SELECT id, username, pass, email, ruolo, accesso FROM utente WHERE username=? AND pass=SHA1(?)");
+                    "SELECT id, username, pass, email, ruolo FROM utente WHERE username=? AND pass=SHA1(?)");
             ps.setString(1, username);
             ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
@@ -61,7 +61,6 @@ public class UtenteDAO {
                 p.setPass(rs.getString(3));
                 p.setEmail(rs.getString(4));
                 p.setRuolo(rs.getString(5));
-                p.setAccesso(rs.getBoolean(6));
                 return p;
             }
             return null;
@@ -73,11 +72,12 @@ public class UtenteDAO {
     public void doSave(Utente user) {
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps = con.prepareStatement(
-                    "INSERT INTO utente (email, username, pass) VALUES(?,?,?)",
+                    "INSERT INTO utente (email, username, pass, ruolo) VALUES(?,?,?,?)",
                     Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, user.getEmail());
             ps.setString(2, user.getUsername());
             ps.setString(3, user.getPass());
+            ps.setString(4,user.getRuolo());
             if (ps.executeUpdate() != 1) {
                 throw new RuntimeException("INSERT error.");
             }
