@@ -1,6 +1,7 @@
 <%@ page import="model.Categoria" %>
 <%@ page import="model.Prodotto" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%--
   Created by IntelliJ IDEA.
   User: vince
   Date: 10/05/2020
@@ -24,22 +25,6 @@
 <body>
 
 <%
-    /*
-
-    Prodotto p1= (Prodotto) ctx.getAttribute("prodotto1");
-    Prodotto p2= (Prodotto) ctx.getAttribute("prodotto2");
-    Prodotto p3= (Prodotto) ctx.getAttribute("prodotto3");
-    Prodotto p4= (Prodotto) ctx.getAttribute("prodotto4");
-    Prodotto p5= (Prodotto) ctx.getAttribute("prodotto5");
-    Prodotto p6= (Prodotto) ctx.getAttribute("prodotto6");
-    Prodotto p7= (Prodotto) ctx.getAttribute("prodotto7");
-
-Prodotto[] p = new Prodotto[0];
-    ServletContext ctx=request.getServletContext();
-    for(int i=0;i<8;i++){
-        p[i]= (Prodotto) ctx.getAttribute("prodotto"+i);
-    }
-     */
     ServletContext ctx=request.getServletContext();
     Prodotto p1,p2,p3,p4,p5,p6,p7,p8;
     p1= (Prodotto) ctx.getAttribute("p1");
@@ -105,7 +90,7 @@ Prodotto[] p = new Prodotto[0];
     <div class="card-deck">
         <div class="card">
 
-            <a href="show-product?product=<%=p1.getNome()%>"><img class="card-img-top" src="<%=p1.getImmagine()%>" alt="Card image cap"></a>
+            <a href="show-product?product=<%=p1.getNome()%>"><img class="card-img-top" src="<%=p1.getImmagine()%>" alt="Card image cap" height="460px" width="112px"></a>
             <div class="card-body">
                 <h6 class="card-title"><%=p1.getNome()%></h6>
                 <p><%=p1.getPrezzo()%></p>
@@ -115,7 +100,7 @@ Prodotto[] p = new Prodotto[0];
             </div>
         </div>
         <div class="card">
-            <img class="card-img-top" src="<%=p2.getImmagine()%>" alt="Card image cap">
+            <a href="show-product?product=<%=p2.getNome()%>"><img class="card-img-top" src="<%=p2.getImmagine()%>" alt="Card image cap" height="460px" width="112px"></a>
             <div class="card-body">
                 <h6 class="card-title"><%=p2.getNome()%></h6>
                 <p><%=p2.getPrezzo()%>€</p>
@@ -125,7 +110,7 @@ Prodotto[] p = new Prodotto[0];
             </div>
         </div>
         <div class="card">
-            <img class="card-img-top" src="<%=p3.getImmagine()%>" alt="Card image cap">
+            <a href="show-product?product=<%=p3.getNome()%>"><img class="card-img-top" src="<%=p3.getImmagine()%>" alt="Card image cap" height="460px" width="112px"></a>
             <div class="card-body">
                 <h6 class="card-title"><%=p3.getNome()%></h6>
                 <p><%=p3.getPrezzo()%>€</p>
@@ -135,7 +120,7 @@ Prodotto[] p = new Prodotto[0];
             </div>
         </div>
         <div class="card">
-            <img class="card-img-top" src="<%=p4.getImmagine()%>" alt="Card image cap">
+            <a href="show-product?product=<%=p4.getNome()%>"><img class="card-img-top" src="<%=p4.getImmagine()%>" alt="Card image cap" height="460px" width="112px"></a>
             <div class="card-body">
                 <h6 class="card-title"><%=p4.getNome()%></h6>
                 <p><%=p4.getPrezzo()%>€</p>
@@ -148,7 +133,7 @@ Prodotto[] p = new Prodotto[0];
 
     <div class="card-deck">
         <div class="card">
-            <img class="card-img-top" src="<%=p5.getImmagine()%>" alt="Card image cap">
+            <a href="show-product?product=<%=p5.getNome()%>"><img class="card-img-top" src="<%=p5.getImmagine()%>" alt="Card image cap" height="460px" width="112px"></a>
             <div class="card-body">
                 <h6 class="card-title"><%=p5.getNome()%></h6>
                 <p><%=p5.getPrezzo()%>€</p>
@@ -158,7 +143,7 @@ Prodotto[] p = new Prodotto[0];
             </div>
         </div>
         <div class="card">
-            <img class="card-img-top" src="<%=p6.getImmagine()%>" alt="Card image cap">
+            <a href="show-product?product=<%=p6.getNome()%>"><img class="card-img-top" src="<%=p6.getImmagine()%>" alt="Card image cap" height="460px" width="112px"></a>
             <div class="card-body">
                 <h6 class="card-title"><%=p6.getNome()%></h6>
                 <p><%=p6.getPrezzo()%>€</p>
@@ -168,7 +153,7 @@ Prodotto[] p = new Prodotto[0];
             </div>
         </div>
         <div class="card">
-            <img class="card-img-top" src="<%=p7.getImmagine()%>" alt="Card image cap">
+            <a href="show-product?product=<%=p7.getNome()%>"><img class="card-img-top" src="<%=p7.getImmagine()%>" alt="Card image cap" height="460px" width="112px"></a>
             <div class="card-body">
                 <h6 class="card-title"><%=p7.getNome()%></h6>
                 <p><%=p7.getPrezzo()%>€</p>
@@ -178,7 +163,7 @@ Prodotto[] p = new Prodotto[0];
             </div>
         </div>
         <div class="card">
-            <img class="card-img-top" src="<%=p8.getImmagine()%>" alt="Card image cap">
+            <a href="show-product?product=<%=p8.getNome()%>"><img class="card-img-top" src="<%=p8.getImmagine()%>" alt="Card image cap" height="460px" width="112px"></a>
             <div class="card-body">
                 <h6 class="card-title"><%=p8.getNome()%></h6>
                 <p><%=p8.getPrezzo()%>€</p>
