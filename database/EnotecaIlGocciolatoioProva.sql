@@ -7,7 +7,11 @@ CREATE TABLE utente (
 	email varchar(30),
     username varchar(30),
     pass varchar(70),
-    ruolo varchar(70)
+    ruolo varchar(70),
+    citta varchar(40),
+    cap int,
+    via varchar(70),
+    ncivico int
     );
     
 create table ordine(
@@ -18,8 +22,10 @@ create table ordine(
 create table prodotto( 
 	id int not null auto_increment primary key,
     nome varchar(40) not null,
+    tipo varchar(50),
     descrizione varchar(300) ,
     prezzo double,
+    sconto double,
     immagine varchar(50),
     anno int,
     regione varchar(30),
@@ -29,6 +35,8 @@ create table prodotto(
     quantita_magazzino int not null,
     nome_categoria varchar(20) references categoria(nome)
 );
+
+
 
 insert into prodotto(nome,descrizione,prezzo,immagine,anno,regione,gradazione,formato,quantita_acquistata, quantita_magazzino, nome_categoria)
 values('Brunello di Montalcino','Rubino intenso, bouquet complesso, con sentori di rosa appassita.', 129, './img/brunello.jpg', 2013, 'Toscana', 13,75,0,0,'Vino' );
