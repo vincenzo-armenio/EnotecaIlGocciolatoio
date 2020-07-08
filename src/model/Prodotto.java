@@ -4,7 +4,9 @@ public class Prodotto {
     private int id;
     private String nome;
     private String descrizione;
+    private String tipo;
     private double prezzo;
+    private double sconto;
     private String immagine;
     private String nome_categoria;
     private int anno;
@@ -16,11 +18,13 @@ public class Prodotto {
 
 
 
-    public Prodotto(int id, String nome, String descrizione, double prezzo, String immagine, String nome_categoria, int anno, String regione, double gradazione, int formato, int quantita_magazzino, int quantita_acquistata) {
+    public Prodotto(int id, String nome, String descrizione, String tipo, double prezzo, double sconto, String immagine, String nome_categoria, int anno, String regione, double gradazione, int formato, int quantita_magazzino, int quantita_acquistata) {
         this.id = id;
         this.nome = nome;
         this.descrizione = descrizione;
+        this.tipo=tipo;
         this.prezzo = prezzo;
+        this.sconto=sconto;
         this.immagine = immagine;
         this.nome_categoria = nome_categoria;
         this.anno=anno;
@@ -45,6 +49,14 @@ public class Prodotto {
         return nome;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -63,6 +75,14 @@ public class Prodotto {
 
     public void setPrezzo(double prezzo) {
         this.prezzo = prezzo;
+    }
+
+    public double getSconto() {
+        return sconto;
+    }
+
+    public void setSconto(double sconto) {
+        this.sconto = sconto;
     }
 
     public String getImmagine() {
