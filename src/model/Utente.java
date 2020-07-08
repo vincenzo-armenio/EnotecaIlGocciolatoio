@@ -14,15 +14,24 @@ public class Utente {
     private String username;
     private String pass;
     private String ruolo;
+    private String citta;
+    private int cap;
+    private String via;
+    private int ncivico;
 
     public Utente(){}
 
-    public Utente(int id, String email, String username, String pass, String ruolo) {
+    public Utente(int id, String email, String username, String pass, String ruolo, String citta, int cap, String via, int ncivico) {
         this.id = id;
         this.email = email;
         this.username = username;
         this.pass = pass;
-        this.ruolo = ruolo; }
+        this.ruolo = ruolo;
+        this.citta=citta;
+        this.cap=cap;
+        this.via=via;
+        this.ncivico=ncivico;
+    }
 
     public int getId() {
         return id;
@@ -74,6 +83,38 @@ public class Utente {
     @Override
     public String toString() {
         return "Utente [id=" + id + ", username=" + username + ", passwordhash=" + pass + ", email=" + email + ", ruolo=" + ruolo + "]";
+    }
+
+    public String getCitta() {
+        return citta;
+    }
+
+    public void setCitta(String citta) {
+        this.citta = citta;
+    }
+
+    public int getCap() {
+        return cap;
+    }
+
+    public void setCap(int cap) {
+        this.cap = cap;
+    }
+
+    public String getVia() {
+        return via;
+    }
+
+    public void setVia(String via) {
+        this.via = via;
+    }
+
+    public int getNcivico() {
+        return ncivico;
+    }
+
+    public void setNcivico(int ncivico) {
+        this.ncivico = ncivico;
     }
 
     @Override
