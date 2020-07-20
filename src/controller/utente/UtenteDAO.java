@@ -1,7 +1,6 @@
 package controller;
 
 import model.ConPool;
-import model.Prodotto;
 import model.Utente;
 
 import java.sql.*;
@@ -91,4 +90,3 @@ public class UtenteDAO {
     }
 
 }
-

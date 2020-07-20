@@ -1,4 +1,5 @@
-package controller.utente;
+package controller;
 
 public class InformazioniPersonali {
+
 }
