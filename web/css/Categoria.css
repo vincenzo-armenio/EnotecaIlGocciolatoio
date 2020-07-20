@@ -1,0 +1,49 @@
+.title {
+    font-weight: bold;
+    font-size: 31px;
+    color: #5C1005;
+    margin: 30px 0;
+
+}
+
+/* stile bottone acquista */
+.buttonAcquista {
+    border-radius: 20px;
+    border: 1px solid #9D953B;
+    background-color: #F5F5F5;
+    color: #9D953B;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 40px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+
+}
+
+a.buttonAcquista{
+    color: #9D953B;
+
+    text-decoration: none;
+}
+/*stile bottone preferiti */
+a.preferiti{
+
+    position: relative;
+    left: 15%;
+    color: #5C1005;
+}
+
+
+.card-footer{
+    background: #F5F5F5;
+}
+
+p{
+    font-size: 12px;
+}
+
+.card-img-top {
+
+    max-height: 100%;
+}

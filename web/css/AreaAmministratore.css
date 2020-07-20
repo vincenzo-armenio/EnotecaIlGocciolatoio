@@ -1,0 +1,65 @@
+.container{
+    box-shadow: 2px 2px 8px -2px rgba(0, 0, 0, 0.15);
+    background-color: #F5F5F5;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 31px;
+    color: #5C1005;
+    margin: 30px 0;
+
+}
+
+.NomeFoto{
+
+    color: #5C1005;
+}
+
+.info-items{
+
+    color: #5C1005;
+}
+.row {
+
+    text-align: center;
+
+}
+
+.fotoUtente {
+
+    width: 125px;
+    height: 125px;
+
+}
+
+.modifica a{
+    text-decoration: none;
+}
+
+ul li{
+
+    list-style: none;
+    margin: 10px 0;
+    font-size: 20px;
+    text-align: left;
+
+}
+
+button {
+    border-radius: 20px;
+    border: 1px solid #9D953B;
+    color: #9D953B;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    background-color: #F5F5F5;
+    margin-top: 6%;
+
+}
+
+button:focus {
+    outline: none;
+}

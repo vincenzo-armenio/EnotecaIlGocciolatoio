@@ -1,0 +1,110 @@
+.container{
+    box-shadow: 2px 2px 8px -2px rgba(0, 0, 0, 0.15);
+    font-family: Arial, Helvetica, sans-serif;
+
+     background-repeat: no-repeat;
+}
+.p-desc{
+  margin-top: 3%;
+	margin-bottom: 4%;
+}
+.titolo-prodotto{
+
+  text-transform: uppercase;
+}
+.caratteristiche{
+  margin-top: 2%;
+	margin-bottom: 2%;
+}
+.h-caratteristiche{
+  font-size: 18px;
+  font-weight: bold;
+}
+.p-head-price{
+  font-size: 18px;
+  font-weight: bold;
+}
+.p-price{
+  font-size: 28px;
+}
+
+button {
+	border-radius: 20px;
+	border: 1px solid #9D953B;
+	color: #9D953B;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+  margin-left: 5%;
+
+}
+
+.buy-form{
+  margin-top: 6%;
+  margin-bottom: 10%;
+
+}
+
+button:focus {
+	outline: none;
+}
+
+/* bottone quantità css */
+
+.value-button {
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.value-button:hover {
+  cursor: pointer;
+}
+
+form #decrease {
+  margin-right: -4px;
+  border-radius: 8px 0 0 8px;
+  width: 40px;
+  height: 40px;
+}
+
+form #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+  width: 40px;
+  height: 40px;
+
+
+}
+
+form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+
+}
+
+input#number {
+  text-align: center;
+  border: none;
+  width: 40px;
+  height: 40px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
