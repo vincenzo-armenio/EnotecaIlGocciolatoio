@@ -19,16 +19,17 @@ public class IndirizzamentoLoginOProfilo extends HttpServlet {
 
         if(user!=null){
 
-            if(user.getRuolo().equals("utente")){
+            if(user.getRuolo().equals("utente")||user.getRuolo()==null){
                 address="/InformazioniPersonali.jsp";
                 RequestDispatcher dispatcher =request.getRequestDispatcher(address);
                 dispatcher.forward(request, response);
             }
-            if(user.getRuolo().equals("amministratore")){
-                address="/ProfiloAmministratore.jsp";
-                RequestDispatcher dispatcher =request.getRequestDispatcher(address);
-                dispatcher.forward(request, response);
-            }
+            else
+                if(user.getRuolo().equals("amministratore")){
+                    address="/ProfiloAmministratore.jsp";
+                    RequestDispatcher dispatcher =request.getRequestDispatcher(address);
+                    dispatcher.forward(request, response);
+                }
 
         } else {
             address = "/LoginRegistrazione.jsp";

@@ -32,28 +32,28 @@ public class HomeServlet extends HttpServlet {
 
         Prodotto p1,p2,p3,p4,p5,p6,p7,p8;
 
-        p1 = proDAO.retriveOne((int) (Math.random() * 10));
+        p1 = proDAO.retriveOne((int) (Math.random() * 7));
         getServletContext().setAttribute("p1" , p1);
 
-        p2 = proDAO.retriveOne((int) (Math.random() * 10));
+        p2 = proDAO.retriveOne((int) (Math.random() * 7));
         getServletContext().setAttribute("p2" , p2);
 
-        p3 = proDAO.retriveOne((int) (Math.random() * 10));
+        p3 = proDAO.retriveOne((int) (Math.random() * 7));
         getServletContext().setAttribute("p3" , p3);
 
-        p4 = proDAO.retriveOne((int) (Math.random() * 10));
+        p4 = proDAO.retriveOne((int) (Math.random() * 7));
         getServletContext().setAttribute("p4" , p4);
 
-        p5 = proDAO.retriveOne((int) (Math.random() * 10));
+        p5 = proDAO.retriveOne((int) (Math.random() * 7));
         getServletContext().setAttribute("p5" , p5);
 
-        p6 = proDAO.retriveOne((int) (Math.random() * 10));
+        p6 = proDAO.retriveOne((int) (Math.random() * 7));
         getServletContext().setAttribute("p6" , p6);
 
-        p7 = proDAO.retriveOne((int) (Math.random() * 10));
+        p7 = proDAO.retriveOne((int) (Math.random() * 7));
         getServletContext().setAttribute("p7" , p7);
 
-        p8 = proDAO.retriveOne((int) (Math.random() * 10));
+        p8 = proDAO.retriveOne((int) (Math.random() * 7));
         getServletContext().setAttribute("p8" , p8);
 
         String address;

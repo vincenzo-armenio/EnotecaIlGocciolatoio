@@ -9,33 +9,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
-@WebServlet("/show-product")
-public class MostraProdotto extends HttpServlet {
+@WebServlet("/search-product")
+public class RicercaServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String product=request.getParameter("product");
+        String s = request.getParameter("stringP");
+        ProdottoDAO proDAO = new ProdottoDAO();
         String address = null;
 
-        if(product!=null){
-            ProdottoDAO proDAO = new ProdottoDAO();
+        List<Prodotto> prodotti = proDAO.retriveBySearch(s);
 
-            Prodotto p=proDAO.retriveByName(product);
-            request.setAttribute("prodotto", p);
-        } else {
-            String id=request.getParameter("prodId");
-            int prodId=Integer.parseInt(id);
-            ProdottoDAO proDAO = new ProdottoDAO();
-            Prodotto p=proDAO.retriveOne(prodId);
-            request.setAttribute("prodotto", p);
-        }
-
-
-        address = "/Prodotto.jsp";
+        request.setAttribute("prodotti", prodotti);
+        address = "/RicercaProdotto.jsp";
         RequestDispatcher dispatcher = request.getRequestDispatcher(address);
         dispatcher.forward(request, response);
-
     }
+
 }

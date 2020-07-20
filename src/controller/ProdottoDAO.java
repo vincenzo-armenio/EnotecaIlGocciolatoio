@@ -1,6 +1,5 @@
 package controller;
 
-import model.Categoria;
 import model.ConPool;
 import model.Prodotto;
 
@@ -9,37 +8,62 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
-
-/*private int id;
-private String nome;
-private String descrizione;
-private double prezzo;
-private String immagine;
-private String nome_categoria;*/
-
 
 public class ProdottoDAO {
     public Prodotto retriveOne(int n){
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps =
-                    con.prepareStatement("SELECT nome, descrizione,prezzo, immagine, anno, regione, gradazione, formato, quantita_acquistata, quantita_magazzino, nome_categoria FROM prodotto WHERE id=?");
+                    con.prepareStatement("SELECT id, nome, descrizione,prezzo, immagine, anno, regione, gradazione, formato, quantita_magazzino, nome_categoria FROM prodotto WHERE id=?");
             ps.setInt(1,n);
             ResultSet rs = ps.executeQuery();
             Prodotto p = new Prodotto();
             while (rs.next()) {
-                p.setNome(rs.getString(1));
-                p.setDescrizione(rs.getString(2));
-                p.setPrezzo(rs.getDouble(3));
-                p.setImmagine(rs.getString(4));
-                p.setAnno(rs.getInt(5));
-                p.setRegione(rs.getString(6));
-                p.setGradazione(rs.getDouble(7));
-                p.setFormato(rs.getInt(8));
-                p.setQuantita_acquistata(rs.getInt(9));
+                p.setId(rs.getInt(1));
+                p.setNome(rs.getString(2));
+                p.setDescrizione(rs.getString(3));
+                p.setPrezzo(rs.getDouble(4));
+                p.setImmagine(rs.getString(5));
+                p.setAnno(rs.getInt(6));
+                p.setRegione(rs.getString(7));
+                p.setGradazione(rs.getDouble(8));
+                p.setFormato(rs.getInt(9));
                 p.setQuantita_magazzino(rs.getInt(10));
+
             }
             return p;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<Prodotto> retriveBySearch(String s){
+        try (Connection con = ConPool.getConnection()) {
+            String search = "%";
+            search += s + "%";
+            PreparedStatement ps =
+                    con.prepareStatement("SELECT id, nome, descrizione,prezzo, immagine, anno, regione, gradazione, formato, quantita_magazzino, nome_categoria FROM prodotto WHERE nome LIKE ?");
+            ps.setString(1,search);
+            ResultSet rs = ps.executeQuery();
+
+            ArrayList<Prodotto> list=new ArrayList<>();
+
+            while (rs.next()) {
+                Prodotto p = new Prodotto();
+                p.setId(rs.getInt(1));
+                p.setNome(rs.getString(2));
+                p.setDescrizione(rs.getString(3));
+                p.setPrezzo(rs.getDouble(4));
+                p.setImmagine(rs.getString(5));
+                p.setAnno(rs.getInt(6));
+                p.setRegione(rs.getString(7));
+                p.setGradazione(rs.getDouble(8));
+                p.setFormato(rs.getInt(9));
+                p.setQuantita_magazzino(rs.getInt(10));
+                list.add(p);
+            }
+            return list;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -63,16 +87,20 @@ public class ProdottoDAO {
         }
     }
 
+
+
     public Prodotto retriveByName(String nome){
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps =
-                    con.prepareStatement("SELECT nome, descrizione,prezzo, immagine, anno, regione, gradazione, formato, quantita_acquistata, quantita_magazzino, nome_categoria FROM prodotto WHERE nome=?");
+                    con.prepareStatement("SELECT nome, descrizione,prezzo, immagine, anno, regione, gradazione, formato, quantita_magazzino, nome_categoria, id FROM prodotto WHERE nome=?");
             ps.setString(1,nome);
 
             ResultSet rs = ps.executeQuery();
+            Prodotto p=new Prodotto();
 
             while (rs.next()) {
-                Prodotto p=new Prodotto();
+
+                p.setId(rs.getInt(10));
                 p.setNome(rs.getString(1));
                 p.setDescrizione(rs.getString(2));
                 p.setPrezzo(rs.getDouble(3));
@@ -81,11 +109,10 @@ public class ProdottoDAO {
                 p.setRegione(rs.getString(6));
                 p.setGradazione(rs.getDouble(7));
                 p.setFormato(rs.getInt(8));
-                p.setQuantita_acquistata(rs.getInt(9));
-                p.setQuantita_magazzino(rs.getInt(10));
-                return p;
+                p.setQuantita_magazzino(rs.getInt(9));
+
             }
-            return null;
+            return p;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -94,7 +121,7 @@ public class ProdottoDAO {
     public ArrayList<Prodotto> retriveAll() {
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps =
-                    con.prepareStatement("SELECT nome, descrizione,prezzo, immagine, anno, regione, gradazione, formato, quantita_acquistata, quantita_magazzino, nome_categoria FROM prodotto");
+                    con.prepareStatement("SELECT nome, descrizione,prezzo, immagine, anno, regione, gradazione, formato, quantita_magazzino, nome_categoria, id FROM prodotto");
             ArrayList<Prodotto> list = new ArrayList<>();
             ResultSet rs = ps.executeQuery();
 
@@ -108,8 +135,8 @@ public class ProdottoDAO {
                 p.setRegione(rs.getString(6));
                 p.setGradazione(rs.getDouble(7));
                 p.setFormato(rs.getInt(8));
-                p.setQuantita_acquistata(rs.getInt(9));
-                p.setQuantita_magazzino(rs.getInt(10));
+                p.setQuantita_magazzino(rs.getInt(9));
+                p.setId(rs.getInt(10));
                 list.add(p);
             }
 
@@ -146,7 +173,7 @@ public class ProdottoDAO {
     public ArrayList<Prodotto> retriveCategory(String cat) {
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps =
-                    con.prepareStatement("SELECT nome,immagine,prezzo FROM prodotto WHERE nome_categoria=?");
+                    con.prepareStatement("SELECT nome,immagine,prezzo, id FROM prodotto WHERE nome_categoria=?");
 
             ps.setString(1,cat);
             ArrayList<Prodotto> list = new ArrayList<>();
@@ -157,6 +184,7 @@ public class ProdottoDAO {
                 p.setNome(rs.getString(1));
                 p.setImmagine(rs.getString(2));
                 p.setPrezzo(rs.getDouble(3));
+                p.setId(rs.getInt(4));
                 list.add(p);
             }
             return list;
