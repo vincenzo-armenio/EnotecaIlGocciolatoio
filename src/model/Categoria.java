@@ -10,7 +10,7 @@ public class Categoria {
         this.nome = nome;
         this.descrizione = descrizione;
     }
-    
+
     public Categoria(){}
 
     public int getId() {

@@ -14,11 +14,10 @@ public class Prodotto {
     private double gradazione;
     private int formato;
     private int quantita_magazzino;
-    private int quantita_acquistata;
 
 
 
-    public Prodotto(int id, String nome, String descrizione, String tipo, double prezzo, double sconto, String immagine, String nome_categoria, int anno, String regione, double gradazione, int formato, int quantita_magazzino, int quantita_acquistata) {
+    public Prodotto(int id, String nome, String descrizione, String tipo, double prezzo, double sconto, String immagine, String nome_categoria, int anno, String regione, double gradazione, int formato, int quantita_magazzino) {
         this.id = id;
         this.nome = nome;
         this.descrizione = descrizione;
@@ -32,7 +31,6 @@ public class Prodotto {
         this.gradazione=gradazione;
         this.formato=formato;
         this.quantita_magazzino=quantita_magazzino;
-        this.quantita_acquistata=quantita_acquistata;
     }
 
     public Prodotto(){}
@@ -139,11 +137,4 @@ public class Prodotto {
         this.quantita_magazzino = quantita_magazzino;
     }
 
-    public int getQuantita_acquistata() {
-        return quantita_acquistata;
-    }
-
-    public void setQuantita_acquistata(int quantita_acquistata) {
-        this.quantita_acquistata = quantita_acquistata;
-    }
 }

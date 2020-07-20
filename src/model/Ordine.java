@@ -8,7 +8,7 @@ public class Ordine {
         this.id = id;
         this.id_utente = id_utente;
     }
-    
+
     public Ordine(){}
 
     public int getId() {
@@ -27,3 +27,5 @@ public class Ordine {
         this.id_utente = id_utente;
     }
 }
+
+
