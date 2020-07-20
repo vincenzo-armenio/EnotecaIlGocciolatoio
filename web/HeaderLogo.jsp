@@ -13,10 +13,10 @@
 </head>
 <body>
 
-<nav class="navbar fixed-top navbar-light">
+<nav class="navbar-fixed-top navbar-light">
     <!-- logo -->
-    <a class="navbar-brand" href="Home.jsp">
-        <img src="./img/logo.png" width="450" height="128">
+    <a class="navbar-brand" href="index.html">
+        <img src="./img/logo.png" width="450" height="128" >
     </a>
 
 </nav>

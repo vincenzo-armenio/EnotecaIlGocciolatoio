@@ -20,7 +20,7 @@
 <!-- utilizzando class = "container" si raggrupa il contenuto al centro dello schermo limitando la grandezza massima -->
 <div class="container">
     <nav class="navbar navbar-light navbar-expand-lg " >
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.html">
             <img src="./img/logo.png" width="450" height="128" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,8 +29,8 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            <form class="form-inline my-2 my-lg-0 " action="#">
-                <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Cosa stai cercando?" aria-label="Search" id="navBarSearchForm">
+            <form class="form-inline my-2 my-lg-0 " action="search-product">
+                <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Cosa stai cercando?" aria-label="Search" id="navBarSearchForm" name="stringP">
                 <button class="btn btn-light btn-sm my-2 my-sm-0" type="submit">Cerca</button>
             </form>
 
@@ -40,7 +40,7 @@
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" ><i class="fas fa-shopping-cart  fa-lg"></i></a>
+                    <a class="nav-link" href="Carrello.jsp" ><i class="fas fa-shopping-cart  fa-lg"></i></a>
 
                 </li>
             </ul>

@@ -96,7 +96,7 @@
                 <p><%=p1.getPrezzo()%></p>
             </div>
             <div class="card-footer">
-                <small class="text-muted"> <a href="#" class="buttonAcquista">Acquista</a> <a href="#" class="preferiti" ><i class="far fa-heart fa-lg"></i></a></small>
+                <small class="text-muted"> <a href="carrello?prodId=<%=p1.getId()%>&addNum=1" class="buttonAcquista">Acquista</a> <a href="#" class="preferiti" ><i class="far fa-heart fa-lg"></i></a></small>
             </div>
         </div>
         <div class="card">

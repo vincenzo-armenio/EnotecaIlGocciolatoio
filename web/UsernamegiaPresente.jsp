@@ -12,6 +12,5 @@
 </head>
 <body>
     Errore, email già presente!
-
 </body>
 </html>
