@@ -1,4 +1,4 @@
-package control.amministratore;
+package controller;
 
 public class RimuoviUtente {
 }
